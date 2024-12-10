@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnSignUp = new Button();
+            label6 = new Label();
             label1 = new Label();
             pictureBox = new PictureBox();
             lblCross = new Label();
@@ -40,6 +42,7 @@
             txtPassword = new TextBox();
             txtEmail = new TextBox();
             btnLogin = new Button();
+            chkShowPassword = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
@@ -47,6 +50,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Brown;
+            panel1.Controls.Add(btnSignUp);
+            panel1.Controls.Add(label6);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox);
             panel1.Dock = DockStyle.Left;
@@ -54,6 +59,33 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(401, 504);
             panel1.TabIndex = 0;
+            // 
+            // btnSignUp
+            // 
+            btnSignUp.BackColor = Color.Brown;
+            btnSignUp.Cursor = Cursors.Hand;
+            btnSignUp.FlatAppearance.BorderColor = Color.White;
+            btnSignUp.FlatStyle = FlatStyle.Flat;
+            btnSignUp.ForeColor = Color.White;
+            btnSignUp.Location = new Point(32, 459);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(329, 29);
+            btnSignUp.TabIndex = 3;
+            btnSignUp.Text = "SIGN UP";
+            btnSignUp.UseVisualStyleBackColor = false;
+            btnSignUp.Click += btnSignUp_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Mongolian Baiti", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(118, 417);
+            label6.Name = "label6";
+            label6.Size = new Size(148, 19);
+            label6.TabIndex = 2;
+            label6.Text = "new? Register here";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -111,7 +143,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(432, 220);
+            label4.Location = new Point(432, 301);
             label4.Name = "label4";
             label4.Size = new Size(84, 20);
             label4.TabIndex = 4;
@@ -121,7 +153,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(432, 301);
+            label5.Location = new Point(432, 219);
             label5.Name = "label5";
             label5.Size = new Size(55, 20);
             label5.TabIndex = 5;
@@ -132,13 +164,13 @@
             txtUserName.BackColor = SystemColors.AppWorkspace;
             txtUserName.Location = new Point(432, 171);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(330, 27);
+            txtUserName.Size = new Size(340, 27);
             txtUserName.TabIndex = 6;
             // 
             // txtPassword
             // 
             txtPassword.BackColor = SystemColors.AppWorkspace;
-            txtPassword.Location = new Point(432, 253);
+            txtPassword.Location = new Point(432, 334);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(340, 27);
             txtPassword.TabIndex = 7;
@@ -146,7 +178,7 @@
             // txtEmail
             // 
             txtEmail.BackColor = SystemColors.AppWorkspace;
-            txtEmail.Location = new Point(432, 334);
+            txtEmail.Location = new Point(432, 255);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(340, 27);
             txtEmail.TabIndex = 8;
@@ -154,10 +186,11 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.Brown;
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(552, 397);
+            btnLogin.Location = new Point(548, 417);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(101, 40);
             btnLogin.TabIndex = 9;
@@ -165,12 +198,25 @@
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
+            // chkShowPassword
+            // 
+            chkShowPassword.AutoSize = true;
+            chkShowPassword.Font = new Font("Javanese Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkShowPassword.Location = new Point(636, 367);
+            chkShowPassword.Name = "chkShowPassword";
+            chkShowPassword.Size = new Size(136, 38);
+            chkShowPassword.TabIndex = 21;
+            chkShowPassword.Text = "Show Password";
+            chkShowPassword.UseVisualStyleBackColor = true;
+            chkShowPassword.CheckedChanged += chkShowPassword_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 504);
+            Controls.Add(chkShowPassword);
             Controls.Add(btnLogin);
             Controls.Add(txtEmail);
             Controls.Add(txtPassword);
@@ -206,5 +252,8 @@
         private TextBox txtPassword;
         private TextBox txtEmail;
         private Button btnLogin;
+        private Label label6;
+        private Button btnSignUp;
+        private CheckBox chkShowPassword;
     }
 }

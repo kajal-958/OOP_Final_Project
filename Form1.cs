@@ -12,6 +12,8 @@ namespace FinancialTracker
         public Form1()
         {
             InitializeComponent();
+            txtPassword.UseSystemPasswordChar = true;
+            chkShowPassword.CheckedChanged += chkShowPassword_CheckedChanged;
         }
 
         private void lblCross_Click(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace FinancialTracker
         }
         private bool ValidateLogin(string username, string password, string email)
         {
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -59,7 +61,7 @@ namespace FinancialTracker
                         cmd.Parameters.AddWithValue("@Email", email);
 
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        return count > 0; 
+                        return count > 0;
                     }
                 }
                 catch (Exception ex)
@@ -74,6 +76,22 @@ namespace FinancialTracker
             Form1 mainForm = new Form1();  // the income and expenses form should be here 
             mainForm.Show();
             this.Hide();
+        }
+        private void OpenRegistrationForm()
+        {
+            registrationForm RegistrationForm = new registrationForm();
+            RegistrationForm.Show();
+            this.Hide(); // Hide the current form
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            OpenRegistrationForm();
+        }
+
+        private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = !chkShowPassword.Checked;
         }
     }
 }
