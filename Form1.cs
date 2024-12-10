@@ -18,7 +18,7 @@ namespace FinancialTracker
 
         private void lblCross_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
