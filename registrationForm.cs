@@ -80,7 +80,7 @@ namespace FinancialTracker
 
         private void lblCross_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
